@@ -10,6 +10,7 @@ package-lock.json
 # production
 /build
 /cache
+/artifacts
 
 # misc
 .eslintcache
