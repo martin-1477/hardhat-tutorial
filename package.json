@@ -1,0 +1,36 @@
+{
+  "name": "zzm-demo",
+  "version": "1.0.0",
+  "description": "ZZM 토큰 발행하여 지갑 연결하여 보여주기 데모  ``` > npm init --yes > npm install --save-dev hardhat > npm install --save-dev @nomiclabs/hardhat-ethers ethers @nomiclabs/hardhat-waffle ethereum-waffle chai ```",
+  "main": "hardhat.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martin-krust/zzm-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martin-krust/zzm-demo/issues"
+  },
+  "homepage": "https://github.com/martin-krust/zzm-demo#readme",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/hardhat-upgrades": "^1.12.0",
+    "chai": "^4.3.4",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.0.32",
+    "hardhat": "^2.7.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.4.0",
+    "hardhat-klaytn-patch": "^0.0.2"
+  }
+}
