@@ -1,26 +1,28 @@
 # hardhat tutorial
 - 참고 사이트: https://hardhat.org/tutorial/
 
+# main 브랜치
+- 튜토리얼 따라 해 보기
 ```
 > npm init --yes
 > npm install --save-dev hardhat
 > npm install --save-dev @nomiclabs/hardhat-ethers ethers @nomiclabs/hardhat-waffle ethereum-waffle chai
 ```
 
-# feature/ERC20
+# feature/ERC20 브랜치
 - ERC20 으로 토큰 만들기 
 ```
 > npm install @openzeppelin/contracts
 ```
 
-# feature/baobab
+# feature/baobab 브랜치
 - Klaytn baobab 에 배포해 보기 
 ```
 > npm install ethers@5.0.32		// 버전 문제로 낮춰야 된다고 함 
 > npm install hardhat-klaytn-patch
 > npm install --save-dev @openzeppelin/hardhat-upgrades
 ```
-- hardhaat.config.js 의 ${YOUR PRIVATE KEY} 부분을 실제 개인키로 세팅 필요 
+- hardhat.config.js 의 ${YOUR PRIVATE KEY} 부분을 실제 개인키로 세팅 필요 
 
 # run
 ```
