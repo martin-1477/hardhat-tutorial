@@ -1,24 +1,17 @@
 import React from 'react';
-import './App.css';
-import { Button, Pane, Text, majorScale } from 'evergreen-ui';
+import { Heading, Pane, Popover, Position, toaster, Menu, PeopleIcon, CircleArrowRightIcon, EditIcon, TrashIcon, Button } from 'evergreen-ui'
+import Header from './components/Header'
 
 function App() {
-    const alarm = () => {
-        alert("Hi~");
-    };
-
 
   return (
-    <div className="App">
-      <header className="App-header">
-          <Pane display="flex" alignItems="center" marginX={majorScale(2)}>
-              <Button marginTop={16} appearance="primary" onClick={alarm}>
-                  Connect Wallet
-              </Button>
-          </Pane>
+      <Pane>
+          <Header />
 
-      </header>
-    </div>
+          <Pane display="flex">
+
+          </Pane>
+      </Pane>
   );
 }
 
