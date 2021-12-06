@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Caver from 'caver-js'
 //import Web3 from 'web3'
 
-import { Heading, Pane, Popover, toaster, Menu, Button } from 'evergreen-ui'
+import { Heading, Pane, Position, Popover, toaster, Menu, Button } from 'evergreen-ui'
 
 interface Props {
 
@@ -10,7 +10,7 @@ interface Props {
 
 declare global {
     interface Window {
-        klaytn: String
+        klaytn: any
     }
 }
 
@@ -21,7 +21,12 @@ const Header: React.FC<Props> = () => {
 
     const connectKaikas = async () => {
         // kaikas
-        await window.klaytn.enable()
+        const { klaytn } = window
+
+        if (klaytn) {
+            await klaytn.enable()
+        }
+
         //const accounts:Array<any> = await window.klaytn.enable()
         //setAddress(accounts[0])
         //const provider = window.klaytn
