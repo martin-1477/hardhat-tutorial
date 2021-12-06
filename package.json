@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.4.0",
-    "hardhat-klaytn-patch": "^0.0.2"
+    "hardhat-klaytn-patch": "^0.0.2",
+    "styled-components": "^5.3.3"
   }
 }
