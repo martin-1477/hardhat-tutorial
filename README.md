@@ -7,6 +7,7 @@ ZZM 토큰 발행하여 지갑 연결하여 보여주기 데모
 > npm install ethers@5.0.32		// 버전 문제로 낮춰야 된다고 함 
 > npm install hardhat-klaytn-patch
 > npm install --save-dev @openzeppelin/hardhat-upgrades
+> npm install dotenv
 ```
 - hardhaat.config.js 의 ${YOUR PRIVATE KEY} 부분을 실제 개인키로 세팅 필요 
 

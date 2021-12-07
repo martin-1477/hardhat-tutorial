@@ -1,3 +1,24 @@
+async function main() {
+  const [deployer] = await ethers.getSigners();
+
+  console.log("Deploying contracts with the account:", deployer.address);
+
+  console.log("Account balance:", (await deployer.getBalance()).toString());
+
+  const Token = await ethers.getContractFactory("KToken");
+  const token = await Token.deploy();
+
+  console.log("Token address:", token.address);
+}
+
+main()
+    .then(() => process.exit(0))
+    .catch((error) => {
+      console.error(error);
+      process.exit(1);
+    });
+
+/*
 // This is a script for deploying your contracts. You can adapt it to deploy
 // yours, or create new ones.
 async function main() {
@@ -20,8 +41,11 @@ async function main() {
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
   const Token = await ethers.getContractFactory("KToken");
+  console.log("AAA0");
   const token = await Token.deploy();
+  console.log("AAA1");
   await token.deployed();
+  console.log("AAA2");
 
   console.log("Token address:", token.address);
 
@@ -56,3 +80,4 @@ main()
     console.error(error);
     process.exit(1);
   });
+*/

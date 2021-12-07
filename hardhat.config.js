@@ -1,3 +1,5 @@
+require('dotenv').config({path:__dirname+'/.env'});
+
 require("hardhat-klaytn-patch");
 require("@nomiclabs/hardhat-waffle");
 require("@openzeppelin/hardhat-upgrades");
@@ -12,6 +14,8 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   }
 });
 
+privateKey = `${process.env.REACT_APP_PRIVATE_KEY}`
+
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
 
@@ -25,11 +29,11 @@ module.exports = {
   networks: {
     baobab: {
       url: "https://kaikas.baobab.klaytn.net:8651/",
-      accounts: ["{YOUR PRIVATE KEY}"],
+      accounts: [privateKey],
     },
     cypress: {
       url: "https://node-api.klaytnapi.com/v1/klaytn",
-      accounts: ["{YOUR PRIVATE KEY}"],
+      accounts: [privateKey],
       gasPrice: 0x5d21dba00,
       httpHeaders: {
         'x-chain-id': "8217",
