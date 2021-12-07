@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+
+import TokenArtifact from "../contracts/KToken.json";
+import contractAddress from "../contracts/contract-address.json";
+
 import Caver from 'caver-js'
-//import Web3 from 'web3'
+import Web3 from 'web3'
 
 import { Heading, Pane, Position, Popover, Badge, Menu, Button } from 'evergreen-ui'
 
@@ -18,7 +22,7 @@ declare global {
 const Header: React.FC<Props> = () => {
 
     const [address, setAddress] = useState<string>('')
-    const contractAddress = '0x733D423e9F8b1160E34917Df1526dC6bae8D8405'
+
 
     const disconnectWallet = () => {
         setAddress('')
@@ -28,9 +32,28 @@ const Header: React.FC<Props> = () => {
             // kaikas
             const { klaytn } = window
 
+            // real en
+            const web3 = new Web3('https://klaytn-en.sixnetwork.io:8651/')
+
             if (klaytn) {
                 const accounts = await klaytn.enable()
-                setAddress(accounts[0])
+                const userAddress = accounts[0]
+                setAddress(userAddress)
+                const contract = new (new Caver(klaytn)).klay.Contract(TokenArtifact.abi as any,
+                                                                       contractAddress.Token)
+                console.log(accounts[0])
+                console.log(userAddress)
+                if (userAddress != '') {
+                    const addr: string = Web3.utils.toChecksumAddress(userAddress)
+                    const balance: string = await web3.eth.getBalance(userAddress)
+                    const tokenBalance = await contract.methods.balanceOf(addr).call()
+
+                    console.log(addr)
+                    console.log(balance)
+                    console.log(tokenBalance)
+                }
+
+
             }
         }
     }

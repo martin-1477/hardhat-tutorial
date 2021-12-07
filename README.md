@@ -1,15 +1,15 @@
-ZZM 토큰 발행하여 지갑 연결하여 보여주기 데모 
+ERC20 토큰 발행하여 지갑 연결하여 보여주기 데모 
 ```
-> npm init --yes
-> npm install --save-dev hardhat
-> npm install --save-dev @nomiclabs/hardhat-ethers ethers @nomiclabs/hardhat-waffle ethereum-waffle chai
-> npm install @openzeppelin/contracts
-> npm install ethers@5.0.32		// 버전 문제로 낮춰야 된다고 함 
-> npm install hardhat-klaytn-patch
-> npm install --save-dev @openzeppelin/hardhat-upgrades
-> npm install dotenv
+npm init --yes
+npm install --save-dev hardhat
+npm install --save-dev @nomiclabs/hardhat-ethers ethers @nomiclabs/hardhat-waffle ethereum-waffle chai
+npm install @openzeppelin/contracts
+npm install ethers@5.0.32		// 버전 문제로 낮춰야 된다고 함 
+npm install hardhat-klaytn-patch
+npm install --save-dev @openzeppelin/hardhat-upgrades
+npm install dotenv
 ```
-- hardhaat.config.js 의 ${YOUR PRIVATE KEY} 부분을 실제 개인키로 세팅 필요 
+- .env 의 REACT_APP_PRIVATE_KEY 를 실제 개인키로 세팅 필요 
 
 # run
 ```
@@ -27,6 +27,7 @@ Deploying contracts with the account: 0x2eDA5B1abD38B3915939791a5ee3E788935C4697
 Account balance: 105221602075000000000
 Token address: 0x4Bcfb9fc5a291e550cc9213D6EaD397f3CC1A4dD
 ```
+frontend/src/contracts 에 json 파일 생성됨 
 ----
 
 # 컨트랙트 배포 결과 확인 
